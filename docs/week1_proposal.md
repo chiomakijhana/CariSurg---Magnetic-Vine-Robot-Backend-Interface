@@ -1,131 +1,43 @@
 # Research Proposal
 
-**Title:** AI-Assisted Backend Interface for the Magnetic Vine Robot: Architecture, Data Pipeline, and Intraoperative Decision Support
+**Title:** Magnetic Vine Robot Deployment Interface Design
 
-**Author:** Chioma (CariSurg Trainee, 2026 Cohort)
-**Supervisor:** Dr. De Freitas
-**Unit:** Clinical AI & Innovation Unit, Mercer Trust
+**Author:** Chioma Okafor
+**Supervisor:** Andrea Trujillo
 **Date:** June 2026
 **Status:** Week 1 Draft
 
 ---
 
-## 1. Introduction
+## 1. Statement of the Problem
 
-Minimally invasive surgery (MIS) has transformed modern surgical practice, offering patients reduced operative trauma, shorter hospital stays, and faster recovery compared to conventional open procedures [1]. Despite these advantages, existing MIS instruments remain fundamentally constrained by their rigid construction, limiting access to anatomically complex target sites and placing significant demands on operator skill [2].
+     Physicians performing minimally invasive procedures within narrow and branching endoluminal pathways require surgical tools that can navigate these complex environments while minimizing tissue trauma. Existing vine robots have demonstrated autonomous tip growth, magnetic steering, as well as integrated imaging and biopsy tools. However, current designs face challenges in miniaturization and require increased pressure tolerances at smaller diameters. This project proposes a compact, modular magnetic vine robot capable of integrating steering, imaging and tool delivery with smaller, interchangeable vine diameters to improve access to deep highly branched anatomical regions for endoscopic procedures.
+---
 
-Soft robotic systems represent a new generation of surgical tools capable of navigating confined and curved anatomical pathways that rigid instruments cannot reach [3]. Among these, vine-inspired robots — which extend through body cavities by growing at the tip rather than pushing from the base — offer a particularly promising approach for single-entry biopsy and tissue removal [4].
+## 2. Previous Work:
 
-The **Magnetic Vine Robot (MVR)**, currently under development at the Clinical AI & Innovation Unit, Mercer Trust, applies magnetic actuation to a vine-inspired soft robotic platform, enabling wireless, steerable navigation through soft tissue without mechanical linkages. This proposal outlines the design and development of the **MVR Backend Interface**: the software layer connecting the robot hardware to the clinical operator, with integrated AI-assisted decision support.
+     Yanez et al. (2026) addressed the clinical challenge of steering soft vine robots used in minimally invasive surgery, whose continuously everting tips can be difficult to control when equipped with tools or sensors. The authors implemented an internal-external ring magnet design to accommodate a permanent magnetic tip equipped with a camera and LED, mounted at the distal end of the everting structure. In doing so, 34 mm bending radius and an average of 35 s per bifurcation was achieved in simulated testing in the upper bronchial tree. However, further miniaturization of the current design is required in order to access deeper regions of the lungs.
+     Hawkes et al. (2017) examined the open challenge of controlled tip based growth of thousands of percent while maintaining directional control at speeds comparable to animal locomotion. The authors developed a soft growing robot that extends through pressure driven eversion of a thin walled vessel and steers through controlled asymmetric tip growth, using onboard camera feedback for autonomous navigation. The robot extended from 28 cm to 72 m, operated across diameters from 1.8 mm to 36 cm, reached speeds exceeding 10 m/s, exhibited extensibility seven orders of magnitude greater than plants, and changed direction in less than 1 s. Although the robot achieved rapid tip growth and steering, it was unable to perform real time branching, a capability observed in natural systems such as fungal hyphae.
+     Glick et al. (2022) investigated branching vine robots for navigation in unmapped environments using eversion based growth. The authors simulated robot growth in known environments and applied particle swarm optimization to improve branching. Optimized designs were then tested in unseen environments and fabricated for validation. These demonstrated 25% greater coverage, 12.55x higher anchoring forces, capacity to hold over 100× their own mass and successfully anchored a load exceeding 66.7 N at 50 kPa internal pressure. Although branching increased exploratory and anchoring abilities, it also increased robot complexity and made sensor integration difficult. The authors also noted that similar performance could be achieved on pre-mapped environments using open or closed loops with less complexity.
+     Davy et al. (2025) addressed the challenge of achieving precise vine robot steering and force transmission during biopsy procedures while maintaining a fully soft structure. The authors developed a magnetic fluid driven vine robot in which the magnetic fluid enables both pressurized tip growth and external steering via magnetic field. It was demonstrated at 4-7 mm diameters, achieved 100% navigation success in bronchial tree phantoms, traversed constrictions as small as 2.5 mm, generated up to 1.26 N of tip insertion force and enabled camera guided needle placement. However, the robot's miniaturization was constrained by burst pressure failures in the 3 mm diameter design; reducing the vine diameter substantially increased the pressure required for growth and necessitates resistance to higher pressures. 
+     Girerd et al. (2024) focused on the challenge of miniaturizing vine robots while maintaining a functional working channel for tool delivery. Reducing vine diameter leads to a significant increase in required eversion pressure within the working channel. The authors implemented a ‘scrunched’ design at the robot tip to reduce friction during growth. This design enabled vine extension at smaller diameters down to approximately 2.3 mm while maintaining structural integrity. However, the approach adds mechanical complexity at the tip and requires careful tuning to ensure consistent performance.
+     Kalibala et al. (2025) addressed the challenge of non linear force and position control in soft growing robots. The authors trained and integrated a deep neural network into a Model Predictive Control (MPC) framework to perform live force and position control. The DNN-MPC controller improved force and position tracking performance while reducing computation time by 11x. However, the authors did not demonstrate its ability to generalize across different vine robot designs or operating environments. 
 
 ---
 
-## 2. Problem Statement
+## 3. Proposed Solution:
+     This project proposes a compact modular backend platform for a magnetic vine robot capable of integrating steering, imaging and tool delivery with smaller, interchangeable vine diameters to improve access to deep highly branched anatomical regions for endoscopic procedures. The system backend interface will allow the use of different tip diameters depending on the clinical task. It will incorporate a simple mechanical docking system for securely attaching and exchanging tools. The design will build on prior approaches such as internal-external ring magnet tips for external magnetic steering, and pressure driven eversion of the vessel (Yanez et al., 2026; Hawkes et al., 2026) In addition, concepts such as friction reduction through “scrunched” material design will also be considered to support improved miniaturisation and deployment (Girerd et al., 2024). A simple interface will be used to display sensor output and confirm that the module is functioning correctly during testing.
 
-Current approaches to biopsy and minimally invasive tissue removal face four interrelated limitations:
 
-**2.1 Access constraints**
-Rigid laparoscopic instruments follow fixed insertion trajectories. Lesions located behind anatomical structures or within narrow body cavities often require either multiple port sites or conversion to open surgery, increasing procedural risk and recovery time [2].
 
-**2.2 Operator dependence**
-Procedural outcomes in MIS are heavily influenced by surgeon experience. Intraoperative decision-making — particularly target localisation and instrument positioning — relies on tacit knowledge that is difficult to transfer and inconsistently applied [5].
+## 4. References
 
-**2.3 Limited intraoperative feedback**
-Surgeons currently lack real-time, quantitative confirmation that the instrument tip is correctly positioned relative to the target tissue. Feedback is primarily visual (endoscopic camera) and does not integrate sensor data from the instrument itself [3].
+Yanez Trujillo A, Davy J, Chandler JH, Avery J, Valdastri P. Miniaturized Magnetic Tip Design for Endoluminal Vine Robot Navigation. Advanced Robotics Research. 2026. doi:10.1002/adrr.202500188
+Hawkes EW, Blumenschein LH, Greer JD, Okamura AM. A soft robot that navigates its environment through growth. Science Robotics. 2017. Available from: https://www.science.org 
+Glick PE, Adibnazari I, Drotman D, Ruffatto D, Tolley MT. Branching Vine Robots for Unmapped Environments. Front Robot AI. 2022. doi:10.3389/frobt.2022.838913
+Davy J, Dean TP, Greenidge NJ, Calmé B, Lloyd P, Chandler JH, et al. Magnetic Fluid-Driven Vine Robots for Minimally Invasive Tissue Biopsy Sampling. Advanced Intelligent Systems. 2025. doi:10.1002/aisy.202400827
+Kalibala A, Nada AA, Ishii H, El-Hussieny H. Real-time force/position control of soft growing robots: A data-driven model predictive approach. Nonlinear Engineering. 2025;14(1). doi:10.1515/nleng-2025-0099
+Girerd C, Alvarez A, Hawkes EW, Morimoto TK. Material Scrunching Enables Working Channels in Miniaturized Vine-Inspired Robots. IEEE Transactions on Robotics. 2024. doi:10.1109/TRO.2024.3370088
 
-**2.4 Unstructured procedural data**
-Intraoperative events are rarely captured in structured, machine-readable form. This limits opportunities for post-hoc analysis, quality improvement, and the development of AI models trained on real procedural data [6].
-
-The MVR hardware addresses limitation 2.1 directly. This proposal addresses limitations 2.2–2.4 through the design of an intelligent backend interface.
-
----
-
-## 3. Proposed System
-
-### 3.1 Overview
-
-The MVR Backend Interface is a Python-based software system that sits between the MVR hardware and the surgeon's control station. It performs four primary functions:
-
-1. **Real-time data ingestion** — receives positional, sensor, and actuation data from the MVR hardware via a serial/wireless communication layer
-2. **Safety interlock enforcement** — monitors data streams for out-of-bounds conditions and triggers hardware stops where necessary
-3. **Structured data logging** — captures all intraoperative events in a standardised schema for audit and AI training
-4. **AI-assisted decision support** — processes sensor data to provide real-time operator guidance on instrument position and tissue classification
-
-### 3.2 Architecture
-
-```
-MVR Hardware
-     │
-     ▼
-Communication Layer (serial / BLE)
-     │
-     ▼
-Backend Interface (Python / FastAPI)
-  ├── Data Ingestion Module
-  ├── Safety Interlock Module
-  ├── Logging Module  ──────────► Procedural Database
-  └── AI Decision Support Module
-     │
-     ▼
-Operator Control Station (frontend)
-```
-
-### 3.3 AI Components
-
-| Component | Method | Input | Output |
-|---|---|---|---|
-| Positional anomaly detection | Statistical process control / lightweight ML | Robot positional data stream | Alert flag + trajectory deviation magnitude |
-| Tissue classification support | CNN on sensor signal data | Force / impedance sensor readings | Tissue type probability distribution |
-| Procedural logging | Rule-based structured capture | All intraoperative events | Timestamped JSON log |
-
----
-
-## 4. Clinical Significance
-
-If successfully developed, the MVR Backend Interface will:
-
-- Reduce operator cognitive load during procedures by surfacing AI-derived guidance in real time
-- Generate structured procedural datasets that can be used to train and validate future AI models
-- Provide an auditable record of every procedure for clinical governance purposes
-- Establish a reusable software architecture applicable to future soft robotic platforms developed by the unit
-
----
-
-## 5. Methodology
-
-**Phase 1 (Weeks 1–4):** Literature review, system architecture design, backend scaffolding in Python
-**Phase 2 (Weeks 5–8):** Data schema definition, API development (FastAPI), integration with MVR hardware simulator
-**Phase 3 (Weeks 9–12):** AI module prototyping, bench testing, documentation and handover
-
-All development will follow version-controlled, audit-ready practices in line with Mercer Trust Clinical IT standards.
-
----
-
-## 6. Ethical Considerations
-
-- No real patient data will be used during the research and prototype phase
-- All testing will use synthetic or anonymised procedural data
-- The system will be clearly labelled as a research prototype and will not be used in clinical settings without appropriate regulatory approval
-- AI outputs will be presented as decision support only; final clinical decisions remain with the operating surgeon
-
----
-
-## 7. References
-
-[1] Litynski, G. S. (1999). Highlights in the history of laparoscopy. Frankfurt: Barbara Bernert Verlag.
-
-[2] Bergeles, C., & Yang, G. Z. (2014). From passive tool holders to microsurgeons: safer, smaller, smarter surgical robots. *IEEE Transactions on Biomedical Engineering*, 61(5), 1565–1576. https://doi.org/10.1109/TBME.2014.2309294
-
-[3] Russo, S., Ranzani, T., Walsh, C. J., & Wood, R. J. (2019). An additive millimeter-scale fabrication method for soft biocompatible actuators and sensors. *Advanced Materials Technologies*, 4(10), 1900375. https://doi.org/10.1002/admt.201900375
-
-[4] Hawkes, E. W., Blumenschein, L. H., Greer, J. D., & Okamura, A. M. (2017). A soft robot that navigates its environment through growth. *Science Robotics*, 2(8), eaan3028. https://doi.org/10.1126/scirobotics.aan3028
-
-[5] Vedula, S. S., Malpani, A., Tao, L., Chen, G., Gao, Y., Poddar, P., ... & Hager, G. D. (2016). Analysis of the structure of surgical activity for a suturing and knot-tying task. *PLOS ONE*, 11(3), e0149174. https://doi.org/10.1371/journal.pone.0149174
-
-[6] Maier-Hein, L., Vedula, S. S., Speidel, S., Navab, N., Kikinis, R., Park, A., ... & Jannin, P. (2017). Surgical data science for next-generation interventions. *Nature Biomedical Engineering*, 1(9), 691–696. https://doi.org/10.1038/s41551-017-0132-7
-
-[7] De Freitas, L., Goodacre, S., O'Hara, R., Thokala, P., & Hariharan, S. (2020). Qualitative exploration of patient flow in a Caribbean emergency department. *BMJ Open*, 10(12), e041422. https://doi.org/10.1136/bmjopen-2020-041422
-
----
 
 *Prepared as part of the CariSurg Healthcare AI Virtual Programme, 2026 Cohort.*
