@@ -1,0 +1,148 @@
+# Backend Development for Magnetic Vine Robot
+## 8-Week Project Checklist
+
+### Milestone 1: Conceptual Design Complete (End of Week 2)
+
+#### Week 1 – Literature Review & Requirements Definition
+- [ ] Review vine robot architectures
+- [ ] Review modular robotic systems
+- [ ] Identify limitations of current systems
+- [ ] Review at least 20 relevant papers
+- [ ] Define functional requirements
+- [ ] Define technical requirements
+- [ ] Prepare requirements specification document
+
+**Benchmark:**
+- [ ] Literature review completed
+- [ ] Requirements document approved
+
+---
+
+#### Week 2 – Concept Development
+- [ ] Develop backend system architecture
+- [ ] Define mechanical interfaces
+- [ ] Define electrical interfaces
+- [ ] Define software interfaces
+- [ ] Create preliminary CAD concepts
+- [ ] Prepare system block diagram
+
+**Benchmark:**
+- [ ] Complete conceptual design
+- [ ] Interface definitions finalized
+- [ ] Preliminary CAD completed
+
+---
+
+### Milestone 2: Prototype Fabrication Complete (End of Week 4)
+
+#### Week 3 – Detailed Design
+- [ ] Finalize CAD models
+- [ ] Design modular attachment interfaces
+- [ ] Select sensors
+- [ ] Select microcontroller
+- [ ] Select communication protocol
+- [ ] Generate fabrication files
+- [ ] Create bill of materials
+
+**Benchmark:**
+- [ ] CAD package finalized
+- [ ] Components selected
+- [ ] Fabrication files ready
+
+---
+
+#### Week 4 – Fabrication & Assembly
+- [ ] 3D print mechanical components
+- [ ] Inspect printed parts
+- [ ] Assemble backend framework
+- [ ] Integrate structural modules
+- [ ] Begin sensor installation
+- [ ] Verify mechanical fit and alignment
+
+**Benchmark:**
+- [ ] ≥90% of components fabricated
+- [ ] Prototype assembled
+- [ ] Sensors mounted successfully
+
+---
+
+### Milestone 3: System Integration Complete (End of Week 6)
+
+#### Week 5 – Electronics & Software Integration
+- [ ] Establish communication between modules
+- [ ] Configure sensor interfaces
+- [ ] Implement data acquisition
+- [ ] Develop monitoring software
+- [ ] Test communication reliability
+- [ ] Debug hardware/software interactions
+
+**Benchmark:**
+- [ ] Sensor data acquired successfully
+- [ ] Communication reliability >95%
+- [ ] Monitoring software operational
+
+---
+
+#### Week 6 – Tool Integration
+- [ ] Integrate interchangeable tools
+- [ ] Validate attachment mechanisms
+- [ ] Validate tool removal mechanisms
+- [ ] Refine hardware interfaces
+- [ ] Refine software interfaces
+- [ ] Perform preliminary functionality testing
+
+**Benchmark:**
+- [ ] Tool exchange completed in <2 minutes
+- [ ] Secure attachment demonstrated
+- [ ] Full system integration achieved
+
+---
+
+### Milestone 4: Validation & Documentation Complete (End of Week 8)
+
+#### Week 7 – Benchtop Testing
+- [ ] Develop testing protocol
+- [ ] Test sensing performance
+- [ ] Test communication performance
+- [ ] Test tool integration performance
+- [ ] Assess robustness
+- [ ] Assess repeatability
+- [ ] Assess usability
+- [ ] Record experimental data
+
+**Benchmark:**
+- [ ] ≥10 successful test cycles
+- [ ] Repeatability demonstrated
+- [ ] Experimental dataset completed
+
+---
+
+#### Week 8 – Analysis & Reporting
+- [ ] Analyse experimental results
+- [ ] Compare performance against requirements
+- [ ] Identify system limitations
+- [ ] Create figures and tables
+- [ ] Prepare conclusions
+- [ ] Write final report
+- [ ] Create presentation slides
+- [ ] Final review and submission
+
+**Benchmark:**
+- [ ] Performance evaluation completed
+- [ ] Final report submitted
+- [ ] Presentation completed
+
+---
+
+# Overall Project Success Criteria
+
+- [ ] System requirements defined
+- [ ] Modular backend architecture developed
+- [ ] Prototype fabricated
+- [ ] Sensors integrated
+- [ ] Communication established
+- [ ] Tool interchangeability demonstrated
+- [ ] Benchtop testing completed
+- [ ] Experimental data analyzed
+- [ ] Final report completed
+- [ ] Presentation delivered
